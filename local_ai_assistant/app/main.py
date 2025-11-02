@@ -23,11 +23,12 @@ def query_ollama(prompt):
 # Create Gradio interface
 iface = gr.Interface(
     fn=query_ollama,
-    inputs=gr.Textbox(label="Ask me anything!", lines=4, placeholder="Enter your question or code prompt..."),
-    outputs=gr.Textbox(label="Assistant Response", lines=10),
-    title="💻 Local AI Assistant",
-    description=f"This assistant runs locally using the `{MODEL_NAME}` model through Ollama."
+    inputs=gr.Textbox(lines=4, placeholder="Enter your question or code prompt..."),
+    outputs=gr.Textbox(label="Response", lines=10),
+    title="AI Assistant",
+    description=f" `{MODEL_NAME}` : Chatbot using ollama "
 )
 
 if __name__ == "__main__":
-    iface.launch(server_name="0.0.0.0", server_port=7860)
+    iface.launch()
+
